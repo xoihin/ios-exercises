@@ -18,7 +18,8 @@
 
 - (NSString *) mainCharacter {
     /* WORK HERE */
-    return @"";
+//    return @"";
+    return @"Dorothy";
 }
 
 @end
