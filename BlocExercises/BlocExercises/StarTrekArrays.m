@@ -13,10 +13,12 @@
 - (NSArray *) arrayOfStarTrekCharactersFromString:(NSString *)characterString {
     /* WORK HERE */
     
-    NSMutableString *fromCharacterString = [NSMutableString stringWithFormat:@"%@", characterString];
-    NSArray *myWorkingArray = [fromCharacterString componentsSeparatedByString:@";"];
+//    NSMutableString *fromCharacterString = [NSMutableString stringWithFormat:@"%@", characterString];
+//    NSArray *myWorkingArray = [fromCharacterString componentsSeparatedByString:@";"];
+//    
+//    return myWorkingArray;
     
-    return myWorkingArray;
+    return [characterString componentsSeparatedByString:@";"];
 }
 
 
