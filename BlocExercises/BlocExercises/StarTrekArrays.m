@@ -12,22 +12,52 @@
 
 - (NSArray *) arrayOfStarTrekCharactersFromString:(NSString *)characterString {
     /* WORK HERE */
-    return @[];
+    
+    NSMutableString *fromCharacterString = [NSMutableString stringWithFormat:@"%@", characterString];
+    NSArray *myWorkingArray = [fromCharacterString componentsSeparatedByString:@";"];
+    
+    return myWorkingArray;
 }
+
+
 
 - (NSString *) stringOfStarTrekCharactersFromArray:(NSArray *)characterArray {
     /* WORK HERE */
-    return @"";
+    
+    NSMutableArray *myWorkingArray = [[NSMutableArray alloc]initWithArray:characterArray];
+    NSString *myReturnString = [myWorkingArray componentsJoinedByString:@";"];
+    
+    return myReturnString;
 }
+
+
 
 - (NSArray *) alphabeticallySortedStarTrekCharactersFromArray:(NSArray *)characterArray {
     /* WORK HERE */
-    return @[];
+    
+    NSMutableArray *myWorkingArray = [[NSMutableArray alloc]initWithArray:characterArray];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:nil ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)];
+    [myWorkingArray sortUsingDescriptors:@[sortDescriptor]];
+    
+    return myWorkingArray;
 }
+
+
 
 - (BOOL) characterArrayContainsWorf:(NSArray *)characterArray {
     /* WORK HERE */
-    return NO;
+    
+    NSMutableArray *myWorkingArray = [[NSMutableArray alloc]initWithArray:characterArray];
+    NSString *myWorkingString = [myWorkingArray componentsJoinedByString:@";"];
+    BOOL foundWorf = NO;
+    
+    NSRange wolfRange = [myWorkingString rangeOfString:@"Worf"];
+    
+    if (wolfRange.location != NSNotFound) {
+        foundWorf = YES;
+    }
+    
+    return foundWorf;
 }
 
 @end
