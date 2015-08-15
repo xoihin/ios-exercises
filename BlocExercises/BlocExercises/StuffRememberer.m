@@ -21,7 +21,8 @@
 - (void) rememberThisArrayForLater:(NSMutableArray *)arrayToRemember {
     /* WORK HERE */
     
-    myArrayToRemember = [[NSMutableArray alloc]initWithArray:arrayToRemember];
+//    myArrayToRemember = [[NSMutableArray alloc]initWithArray:arrayToRemember];  // Copied an array
+    myArrayToRemember = arrayToRemember;                                          // Save to the array so it points to the same memory.
 }
 
 - (void) copyThisArrayForLater:(NSMutableArray *)arrayToCopy {
