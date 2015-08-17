@@ -75,16 +75,12 @@ func favoriteDrinksArrayForCharacters(characters:Array<Dictionary<String, String
     // return an array of favorite drinks, like ["prune juice", "tea, Earl Grey, hot"]
     // WORK HERE
     
-    let character = characters[0]
-    let drinkFromWorf = character["favorite drink"]
-    
-    let character2 = characters[1]
-    let drinkFromPicard = character2["favorite drink"]
-    
     var allDrinkArray = [String]()
-    allDrinkArray.append(drinkFromWorf!)
-    allDrinkArray.append(drinkFromPicard!)
     
+    for myIndex in characters {
+        let myDrinks = myIndex["favorite drink"]
+        allDrinkArray.append(myDrinks!)
+    }
     return allDrinkArray
 }
 
