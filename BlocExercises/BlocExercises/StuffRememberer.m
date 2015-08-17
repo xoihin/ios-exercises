@@ -22,12 +22,13 @@
     /* WORK HERE */
     
 //    myArrayToRemember = [[NSMutableArray alloc]initWithArray:arrayToRemember];  // Copied an array
-    myArrayToRemember = arrayToRemember;                                          // Save to the array so it points to the same memory.
+    myArrayToRemember = arrayToRemember;                                          // Save to the array so it points to the same memory location.
 }
 
 - (void) copyThisArrayForLater:(NSMutableArray *)arrayToCopy {
     /* WORK HERE */
-    myArrayToCopy = [[[NSMutableArray alloc]initWithArray:arrayToCopy]mutableCopy];
+//    myArrayToCopy = [[[NSMutableArray alloc]initWithArray:arrayToCopy]mutableCopy];  // works but copies twice.  Alloc / init already copies...
+    myArrayToCopy = [[NSMutableArray alloc]initWithArray:arrayToCopy];
 }
 
 - (void) rememberThisFloatForLater:(CGFloat)floatToRemember {
@@ -45,7 +46,8 @@
 - (NSMutableArray *) arrayYouShouldCopy {
     /* WORK HERE */
     
-    return [myArrayToCopy mutableCopy];
+//    return [myArrayToCopy mutableCopy];  // myArrayTocopy is already a copy, no need to spicify mutableCopy again.
+    return myArrayToCopy;
 }
 
 - (CGFloat) floatYouShouldRemember {
